@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+  background-color: black;
+}
+div,
+canvas {
+  height: 54px;
+  width: 54px;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+.container {
+  display: flex;
+  width: max-content;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.baloon {
+  position: absolute;
+  transition: linear 1s;
+}
+.sprite {
+  z-index: 96;
+}
+.explosion {
+  position: absolute;
+  z-index: 98;
+}
+#player,
+#dead_guy {
+  transform: translate(12px, 20px);
+  z-index: 100;
+}
+#bomb {
+  z-index: 97;
+}
+.stone {
+  z-index: 1000;
+}
