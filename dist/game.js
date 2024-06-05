@@ -1,6 +1,5 @@
 // const wsUri = "ws://dygsow.ct8.pl:23641/webtest/websocket.php";
 // const websocket = new WebSocket(wsUri);
-
 // export class Game {
 //   public gameBoard
 //   public baloons
@@ -39,7 +38,6 @@
 //     }
 //   };
 //   public send = (key: string, val: any) => websocket.send(JSON.stringify({key: key, contents: val}));
-  
 //   public newPlayer = (npi: { nick: string; data: any; }) => {
 //     if (npi.nick != this.urGamerTag) {
 //       this.players[npi.nick] = npi.data
@@ -48,7 +46,6 @@
 //       img.onload = () => allSprites.otherPlayers[npi.nick] = new Anim(img, data.player, "_"+npi.nick, players[npi.nick].pos, 'right', true)
 //     }
 //   }
-
 //   public playerGone = (thatUser: string) => {
 //     console.log(thatUser+" is gone");
 //     players = Object.keys(players).filter(key =>

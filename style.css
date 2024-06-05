@@ -1,0 +1,218 @@
+@font-face {
+  font-family: bomberFont;
+  src: url(./fonts/bomberfont.otf);
+}
+@font-face {
+  font-family: retroFont;
+  src: url(./fonts/kongtext.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  overflow: hidden;
+  background-color: black;
+}
+div,
+canvas {
+  height: 54px;
+  width: 54px;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+#test {
+  will-change: filter;
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(50vh - 54px);
+  margin-left: calc(50vw - 54px);
+  transform: translateX(-32px) translateY(-40px);
+  transition-duration: .15s;
+}
+.container {
+  display: flex;
+  width: max-content;
+  flex-direction: row;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.baloon, .explosion, .otherplayer, .player, .bomb, .desbrick, #power {
+  position: relative;
+  filter: drop-shadow(2px 2px 1px black);
+}
+.baloon {
+  transition: linear 1.2s;
+  filter: drop-shadow(2px 2px .5px black);
+  z-index: 98;
+}
+.explosion {
+  z-index: 98;
+  filter: drop-shadow(orange 0px 0px 20px);
+}
+.otherplayer {
+  z-index: 100;
+}
+#player {
+  position: absolute;
+  transform: translateX(-20px) translateY(-22px);
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  transition-duration: 0s;
+}
+#bomb {
+  z-index: 97;
+}
+#power {
+  z-index: 95;
+}
+.stone, .brick {
+  box-shadow: inset 2px 2px 5px white;
+  filter: drop-shadow(2px 2px 1px black);
+}
+h1 {
+  font-family: bomberFont;
+  position: absolute;
+  font-size: 100px;
+  top: 95px;
+  left: 50%;
+  letter-spacing: 2px;
+  transform: translateX(-50%);
+  color: lightgray;
+  text-shadow: 5px 5px 0px green;
+}
+.form {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition-duration: .5s;
+}
+.form * {
+  margin-bottom: 10px;
+}
+.inputs {
+  display: flex;
+  width: fit-content;
+}
+label {
+  color: white;
+  font-family: retroFont;
+  font-size: 25px;
+}
+input {
+  color: white;
+  font-family: retroFont;
+  border: none;
+  background: transparent;
+  border-bottom: 5px solid white;
+}
+#submit-btn, p, #reset_btn {
+  top: 40%;
+  left: 50%;
+  font-family: retroFont;
+  font-size: 30px;
+  color: white;
+  border: none;
+  width: min-content;
+  background: transparent;
+  border: 5px solid white;
+  padding: 5px;
+  cursor: pointer;
+  transition-duration: .5s;
+}
+#submit-btn:hover {
+  color: red;
+  border-color: red;
+}
+p {
+  position: absolute;
+  transform: translateX(-50%);
+  top: -50%;
+  color: rgb(255, 0, 0);
+  border: 5px solid rgb(255, 0, 0);
+  cursor: default;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 2s;
+}
+#reset_btn {
+  position: absolute;
+  transform: translateX(-50%);
+  top: -50%;
+  border: none;
+  width: fit-content;
+  transition: 2s;
+}
+#reset_btn:hover {
+  color: green;
+}
+#slider {
+  -webkit-appearance: none;
+  width: 300px;
+  border-bottom: none;
+  height: 10px;
+  background: lightgray;
+  outline: none;
+  opacity: 0.7;
+  margin-bottom: 40px;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+#slider:hover {
+  opacity: 1;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: green;
+  cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: green;
+  cursor: pointer;
+}
+#preview {
+  width: 50px;
+  margin: 20px;
+}
+#sprites {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+#glist {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+#glist div {
+  background-color: cornflowerblue;
+  border: 4px solid Salmon;
+  font-family: retroFont;
+  width: max-content;
+  height: min-content;
+  text-align: center;
+}

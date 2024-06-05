@@ -59,4 +59,66 @@ export class Helper {
     }
     return pos;
   }
+  moveChecker(controller: number[], moveBinds: number[], hb: { lt: number[]; lb: number[]; rt: number[]; rb: number[]; }, velocity: number, gameBoard: number[][], dsplySize: number) {
+    let directions: string[] = ['left', 'up', 'right', 'down'];
+    let xyMove = [0,0]
+    controller.forEach((key: any) => {
+        let temp: string | number;
+        switch (key) {
+          case moveBinds[0]:
+            temp = this.checkMoveAvail(
+              hb.lt[1],
+              hb.lt[0] - 2 * velocity,
+              hb.lb[1],
+              hb.lb[0] - 2 * velocity,
+              -velocity,
+              gameBoard,
+              dsplySize
+            );
+            if (typeof temp === 'string') directions[0] = temp;
+            else xyMove[0] = temp;
+            break;
+          case moveBinds[1]:
+            temp = this.checkMoveAvail(
+              hb.lt[1] - 2 * velocity,
+              hb.lt[0],
+              hb.rt[1] - 2 * velocity,
+              hb.rt[0],
+              -velocity,
+              gameBoard,
+              dsplySize
+            );
+            if (typeof temp === 'string') directions[1] = temp;
+            else xyMove[1] = temp;
+            break;
+          case moveBinds[2]:
+            temp = this.checkMoveAvail(
+              hb.rt[1],
+              hb.rt[0] + velocity,
+              hb.rb[1],
+              hb.rb[0] + velocity,
+              velocity,
+              gameBoard,
+              dsplySize
+            );
+            if (typeof temp === 'string') directions[2] = temp;
+            else xyMove[0] = temp;
+            break;
+          case moveBinds[3]:
+            temp = this.checkMoveAvail(
+              hb.lb[1] + velocity,
+              hb.lb[0],
+              hb.rb[1] + velocity,
+              hb.rb[0],
+              velocity,
+              gameBoard,
+              dsplySize
+            );
+            if (typeof temp === 'string') directions[3] = temp;
+            else xyMove[1] = temp;
+            break;
+        }
+      })
+      return [directions, xyMove]
+  }
 }

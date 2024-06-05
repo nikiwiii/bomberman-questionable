@@ -2,12 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>bomberman</title>
   </head>
   <body>
+    <h1>BOMBERMAN</h1>
     <div id="app"></div>
-    <script type="module" src="./src/main.ts"></script>
+    <div id="glist"></div>
+    <div class="form">
+      <div class="inputs">
+        <label for="nick">enter your gamertag: </label>
+        <input type="text" name="nick" id="nick">
+      </div>
+      <img src="./img/bombergif.gif" alt="gif" id="preview">
+      <input type="range" min="0" max="360" value="180" id="slider">
+      <button id="submit-btn">BLOW SHIT UP</button>
+    </div>
+    <p id="dead_label">GET GOOD</p>
+    <button id="reset_btn">&lt;try again&gt;</button>
+    <script type="module" src="./dist/main.js"></script>
   </body>
 </html>
